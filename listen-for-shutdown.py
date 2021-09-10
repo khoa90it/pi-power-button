@@ -4,8 +4,8 @@
 import RPi.GPIO as GPIO
 import subprocess
 
-int pinLed = 3
-int pinFan = 2
+pinLed = 3
+pinFan = 2
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pinLed, GPIO.IN, pull_up_down=GPIO.PUD_UP)

@@ -4,9 +4,14 @@
 import RPi.GPIO as GPIO
 import subprocess
 
+int pinLed = 3
+int pinFan = 2
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.wait_for_edge(3, GPIO.FALLING)
+GPIO.setup(pinLed, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.wait_for_edge(pinLed, GPIO.FALLING)
+
+GPIO.setup(pinFan, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.wait_for_edge(pinFan, GPIO.FALLING)
 
 subprocess.call(['shutdown', '-h', 'now'], shell=False)
